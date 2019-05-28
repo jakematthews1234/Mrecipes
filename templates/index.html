@@ -1,0 +1,33 @@
+
+<!--block content and for loop--!>
+{% extends 'base.html' %}
+{% block content %}
+    {% for recipe in recipes %}
+    {{recipe.recipe_name}}
+    {{recipe.author}}
+    {{recipe.cook_time}}
+    {{recipe.Level}}
+    {{recipe.Method}}
+    {{recipe.Servings}}
+    {% endfor %}
+
+<!--accordion--!>
+<ul class="collapsible">
+    <!--search database for recipe--!>
+    {% for recipe in recipes %}
+    <!--recipe name/author/level of difficulty and cook times.--!>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">arrow_downward</i>
+          <strong>{{recipe.recipe_name}}</strong> - {{recipe.author}}     - {{recipe.Level}}     - {{recipe.cook_time}}
+      </div>
+        <!--recipe method and servings via collapsible body--!>
+      <div class="collapsible-body">
+          <span>
+              {{recipe.Method}} - {{recipe.Servings}}
+          </span>
+      </div>
+    </li>
+      {% endfor %}
+  </ul>
+{% endblock %}
+
