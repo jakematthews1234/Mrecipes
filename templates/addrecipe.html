@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %} {% block content %}
+<h3> Add Recipe</h3>
+  <div class="row">
+      <form action="" method="POST" class="col s12">
+<!--to work on later..function for users to select options for search-->
+          <!--          <div class="row">-->
+<!--              <div class="input-field col s12">-->
+<!--                  <select>-->
+<!--                      <option value="" disabled selected> Choose your option</option>-->
+<!--                       <option value="1"> Option 1</option>-->
+<!--                       <option value="2"> Option 2</option>-->
+<!--                       <option value="3"> Option 3</option>-->
+<!--                  </select>-->
+<!--                  <label>Materialize select</label>-->
+<!--              </div>-->
+<!--          </div>-->
+        <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="recipe_name" name="recipe_name" type="text" class="validate">
+            <label for="icon_prefix">Recipe name</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="author" name="author" type="text" class="validate">
+            <label for="icon_prefix">Author</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="cook_time" name="cook_time" type="text" class="validate">
+            <label for="icon_prefix">Cook time</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="Level" name="Level" type="text" class="validate">
+            <label for="icon_prefix">Level of difficulty</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="Ingredients" name="Ingredients" type="text" class="validate">
+            <label for="icon_prefix">Ingredients</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="Method" name="Method" type="text" class="validate">
+            <label for="icon_prefix">Method</label>
+        </div>
+                <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="Servings" name="Servings" type="text" class="validate">
+            <label for="icon_prefix">No. of Servings</label>
+        </div>
+
+    </form>
+  </div>
+{% endblock %}
+</html>
