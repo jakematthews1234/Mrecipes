@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+<h3> Edit Recipe</h3>
+<div class="row">
+    <form method="POST" enctype="multipart/form-data" class="col s12">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.recipe_name.label }} <br>
+            {{ form.recipe_name(size=120) }} <br>
+            {% for error in form.recipe_name.errors %}
+            <span style="color: red;"> {{ error }} </span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.author.label }} <br>
+            {{ form.author(size=120) }} <br>
+            {% for error in form.author.errors %}
+            <span style="color: red;"> {{ error }} </span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.cook_time.label }} <br>
+            {{ form.cook_time(size=120) }} <br>
+            {% for error in form.cook_time.errors %}
+            <span style="color: red;"> {{ error }} </span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.level.label }} <br>
+            {{ form.level(size=120) }} <br>
+            {% for error in form.level.errors %}
+            <span style="color: red;"> {{ error }} </span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.ingredients.label }}<br>
+            {{ form.ingredients(cols="40", rows="16") }}
+            {% for error in form.ingredients.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.method.label }}<br>
+            {{ form.method(cols="80", rows="16") }}
+            {% for error in form.method.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.servings.label }} <br>
+            {{ form.servings(size=120) }} <br>
+            {% for error in form.servings.errors %}
+            <span style="color: red;"> {{ error }} </span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit }}
+        </p>
+
+    </form>
+    {% endblock %}
+
