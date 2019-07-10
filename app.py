@@ -5,7 +5,6 @@ from bson.objectid import ObjectId
 from pprint import pprint
 import json
 
-
 # connect to mongodb
 app = Flask(__name__)
 client = MongoClient(os.environ.get('MONGO_URI'))
@@ -35,11 +34,30 @@ def add_recipe():
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
+    """ creating an option for users to edit an existing recipe by finding the existing recipe
+    in the database"""
+    the_recipe = db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_categories = db.categories.find()
     return render_template('editrecipe.html', recipe=the_recipe, categories=all_categories)
 
 
+@app.route('/edit_recipe/<recipe_id>', methods=['POST', 'GET'])
+def update_recipe(recipe_id):
+    recipe = db.recipe
+    recipe.replace_one({'_id': ObjectId(recipe_id)},
+                 {
+                     'recipe_name': request.form.get('recipe_name'),
+                     'Author': request.form.get('Author'),
+                     'cook_time': request.form.get('task_description'),
+                     'Level': request.form.get('Level'),
+                     'Ingredients': request.form.get('Ingredients'),
+                     'Method': request.form.get('Method'),
+                     'Servings': request.form.get('Servings')
+                 })
+    return redirect(url_for('index', recipe_id=recipe_id))
+
+
 # setting up flask
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
