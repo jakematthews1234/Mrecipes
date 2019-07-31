@@ -12,10 +12,28 @@
 </head>
 
 <body>
-<!--block content--!>
-    {% block content %}
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">M Recipes</a>
+        <form class="" action="{{ url_for('search') }}">
+            <input class="" type="text" name="query"/>
+            <div class="">
+                <button class="" type="submit">
+                    Search Recipes
+                </button>
+            </div>
 
-    {% endblock %}
+        </form>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="add_recipe">Add a recipe!</a></li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+<!--block content--!>
+    {% block content %} {% endblock %}
 <!--using jquery for materialize--!>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--using javascript for materialize--!>

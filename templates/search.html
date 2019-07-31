@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Search results for: {{ query }}</h1>
+{% for recipe in results %}
+{{ recipe }}
+<!-- all the search criteria for the search bar -->
+<div>
+    <p>
+        {{ recipe.recipe_name }}
+    </p>
+    <p>
+        {{ recipe.ingredients }}
+    </p>
+    <p>
+        {{ recipe.method }}
+    </p>
+    <p>
+        {{ recipe.author }}
+    </p>
+
+
+</div>
+{% endfor %}
+{% endblock %}
