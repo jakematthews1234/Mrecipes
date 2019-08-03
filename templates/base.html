@@ -8,28 +8,29 @@
     <!--css link to materialize--!>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!-- link to static file, 'css' --!>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
+    <link rel="stylesheet" href="../static/styles.css" type="text/css" />
 </head>
 
-<body>
+<body class="container">
 <header>
   <nav>
+      <div class="row">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">M Recipes</a>
-        <form class="" action="{{ url_for('search') }}">
-            <input class="" type="text" name="query"/>
-            <div class="">
-                <button class="" type="submit">
-                    Search Recipes
-                </button>
-            </div>
-
-        </form>
+      <a href="index.html" class="brand-logo col s6">M Recipes</a>
+    </div>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="add_recipe">Add a recipe!</a></li>
       </ul>
     </div>
+      </div>
   </nav>
+
+    <form class="row" action="{{ url_for('search') }}">
+            <input class="" type="text" name="query" placeholder="search here.."/>
+            <div class="search-button col s9">
+                <button class="col s3" type="submit">
+                    Search Recipes
+                </button>
 
 </header>
 <!--block content--!>

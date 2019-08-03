@@ -1,0 +1,30 @@
+.search-button {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.nav-wrapper {
+    background-color: blue;
+}
+
+.search-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.waves-effect-waves-light-btn-btn_small {
+    font-size:0.875em;
+    display:block;
+    left:-60px;
+    margin-top:35px;
+    width:100%;
+}

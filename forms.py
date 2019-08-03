@@ -16,7 +16,7 @@ class EditRecipeForm(FlaskForm):
 
 
 class AddRecipeForm(FlaskForm):
-    """ form for edit recipe """
+    """ form for add recipe """
     recipe_name = StringField("Recipe Name", validators=[DataRequired()])
     author = StringField("Author", validators=[DataRequired()])
     cook_time = StringField("Cook Time", validators=[DataRequired()])
@@ -24,4 +24,4 @@ class AddRecipeForm(FlaskForm):
     ingredients = TextAreaField("Ingredients(one per line)", validators=[DataRequired()])
     method = TextAreaField("Method(one per line)", validators=[DataRequired()])
     servings = StringField("No. of Servings", validators=[DataRequired()])
-    submit = SubmitField("Update Recipe")
+    submit = SubmitField("Add Recipe!")

@@ -44,11 +44,6 @@ def add_recipe():
         })
         return redirect(url_for("index", title="Recipe added"))
     return render_template("add_recipe.html", title="Add a recipe", form=form)
-    # if request.method == "POST":
-    #     recipe = request.form.to_dict()
-    #     recipes.insert_one(recipe)
-    #     return redirect(url_for('add_recipe'))
-    # return render_template('addrecipe.html')
 
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
@@ -57,9 +52,9 @@ def edit_recipe(recipe_id):
     in the database"""
     recipe_db = db.recipes.find_one({"_id": ObjectId(recipe_id)})
     if request.method == "GET":
-        form = RecipeForm(data=recipe_db)
+        form = AddRecipeForm(data=recipe_db)
         return render_template('edit_recipe.html', recipe=recipe_db, form=form)
-    form = EditRecipeForm(request.form)
+    form = AddRecipeForm(request.form)
     if form.validate_on_submit():
         recipes_db = db.recipes
         """ retrieving the information from the database and displaying it in the form so it can be 
