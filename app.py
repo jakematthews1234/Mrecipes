@@ -52,9 +52,9 @@ def edit_recipe(recipe_id):
     in the database"""
     recipe_db = db.recipes.find_one({"_id": ObjectId(recipe_id)})
     if request.method == "GET":
-        form = AddRecipeForm(data=recipe_db)
+        form = EditRecipeForm(data=recipe_db)
         return render_template('edit_recipe.html', recipe=recipe_db, form=form)
-    form = AddRecipeForm(request.form)
+    form = EditRecipeForm(request.form)
     if form.validate_on_submit():
         recipes_db = db.recipes
         """ retrieving the information from the database and displaying it in the form so it can be 
@@ -85,8 +85,8 @@ def delete_recipe(recipe_id):
 @app.route('/search')
 def search():
     """ for search bar """
-    user_search= request.args["query"]
-    """ line 95 was created by my tutor, and not myself """
+    user_search = request.args["query"]
+    """ line below was created by my tutor, and not myself """
     query = {'$regex': re.compile('.{}.'.format(user_search)), '$options': 'i'}
     results = db.recipes.find({
         '$or':

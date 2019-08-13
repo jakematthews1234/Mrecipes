@@ -1,6 +1,6 @@
 
 {% extends 'base.html'%} {% block content %}
-<div class="row" xmlns="http://www.w3.org/1999/html">
+<div class="row">
     <ul class="collapsible" data-collapsible="accordion">
         {% for recipe in recipes %}
         <li>
@@ -16,9 +16,10 @@
                     <strong> Recipe Name: {{recipe.recipe_name}} - Author: {{recipe.author}}     - Level of difficulty: {{recipe.level}}     - Time taken: {{recipe.cook_time}} </strong>
                 </div>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body recipe-list">
                 <span>
-                   <strong> Method: </strong> {{recipe.method}} - <strong> {{recipe.servings}} - Ingredients: </strong> {{recipe.ingredients}}
+                    <p><strong> Method: </strong> </p> {{recipe.method}} - <strong> {{recipe.servings}} -<p> Ingredients: </p> </strong> {{recipe.ingredients}}
+                    <img class="recipe-image" src="{{recipe.image}}" alt="{{recipe.recipe_name}}">
             </span>
             </div>
         </li>

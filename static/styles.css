@@ -28,3 +28,14 @@
     margin-top:35px;
     width:100%;
 }
+
+.recipe-image {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 400px;
+}
+
+.recipe-list {
+    white-space: pre-wrap;
+}
