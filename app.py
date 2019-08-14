@@ -79,7 +79,7 @@ def edit_recipe(recipe_id):
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     """ allowing users to delete recipes easily with a click of a button"""
-    db.recipes.remove({'_id': ObjectId(recipe_id)})
+    db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('index'))
 
 @app.route('/search')

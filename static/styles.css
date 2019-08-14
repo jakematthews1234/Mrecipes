@@ -33,9 +33,19 @@
     display: block;
     margin: 0 auto;
     width: 70%;
-    height: 400px;
+    height: 70%;
 }
 
 .recipe-list {
     white-space: pre-wrap;
+}
+
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+.navigation-bar {
+    position: static;
+    display: none;
+    width: 100%;
+}
+
 }

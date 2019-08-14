@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <!--link to material icons--!>
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--css link to materialize--!>
+    <!--link to material icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--css link to materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- link to static file, 'css' --!>
-    <link rel="stylesheet" href="../static/styles.css" type="text/css" />
+    <!-- link to static file, 'css' -->
+    <link rel="stylesheet" href="../static/styles.css" type="text/css"/>
 </head>
-
+<!-- Navigation bar -->
 <body class="container">
 <header>
-  <nav>
-      <div class="row">
-    <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo col s6">M Recipes</a>
-    </div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="add_recipe">Add a recipe!</a></li>
-      </ul>
-    </div>
-      </div>
-  </nav>
-
+    <nav>
+        <div class="row navigation-bar">
+            <div class="nav-wrapper">
+                <a href="/home" class="brand-logo col s6 show-on-med-and-down">M Recipes</a>
+            </div>
+            <ul id="nav-mobile" class="right show-on-med-and-down">
+                <li><a href="add_recipe">Add a recipe!</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- Search bar -->
     <form class="row" action="{{ url_for('search') }}">
-            <input class="" type="text" name="query" placeholder="search here.."/>
-            <div class="search-button col s9">
-                <button class="col s3" type="submit">
-                    Search Recipes
-                </button>
+        <input class="" type="text" name="query" placeholder="search here.."/>
+        <div class="search-button col s9">
+            <button class="col s3" type="submit">
+                Search Recipes
+            </button>
+        </div>
+    </form>
 
 </header>
-<!--block content--!>
-    {% block content %} {% endblock %}
-<!--using jquery for materialize--!>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--using javascript for materialize--!>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!--block content-->
+{% block content %} {% endblock %}
+<!--using jquery for materialize-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--using javascript for materialize-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
 
 </html>
