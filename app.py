@@ -102,4 +102,4 @@ def search():
 if __name__ == '__main__':
     app.config['TRAP_BAD_REQUEST_ERRORS'] = False
     app.config['DEBUG'] = False
-    app.run(host='0.0.0.0', port=33507, debug=True)
+    app.run(host='127.0.0.1', debug=True)
