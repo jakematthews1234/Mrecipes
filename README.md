@@ -1,5 +1,9 @@
 # Mrecipes 
 
+You can find the deployed version of my project here on Heroku:
+https://mrecipes1.herokuapp.com/
+
+
 ## __PROJECT OVERVIEW__
 This is my third of four projects within the CodeInstitute course. In this project I focused on using Python
 along with other coding languages such as HTML and CSS to create a web page which is capable of storing 
@@ -160,5 +164,38 @@ time debugging in an attempt to fix this issue, but as it was a course project, 
 take too much time, as the general function works successfully.              
 
 
+## __DEPLOYMENT__
+
+* The deployment process took longer than expected due to the difficulty of installing the Heroku software onto my 
+computer. This required me to read, understand and learn the Heroku documentation. I deployed my app by linking my
+github to heroku and using the master branch to do this. I also had to define the IP and PORT in config vars on Heroku, 
+as well as my 'MONGO_URI' environment variable. In order to run my code locally, I have left in my app.py folder a
+piece of commented out code that must be swapped (Host) so that it swaps from the deployed version to the development
+version.  
+
+## __CREDIT__
+
+
+Although all code (apart from my search bar code, which has a comment above, stating it is my tutors work) is mine,
+I took inspiration from both my tutor and other students via SLACK in order to build my app. 
+
+All photos used were taken from BBC good food's website. All rights are reserved to them, I do not own any of them. 
+
+All recipes used for this project were taken from BBC good food's website. 
+
+Link to BBC good food's website can be found here: https://www.bbcgoodfood.com/
+### __ACKNOWLEDGEMENTS__
+
+* I would like to give a huge thank you to my tutor, Spencer. Who has gone above and beyond to ensure the completion
+of this project, helping me whenever and wherever possible. 
+
+* I would like to thank those students who gave me support during confusing times throughout the duration of the
+project.
+
+* I would like to thank Niel from tutor support, who helped me ensure that my project was properly deployed.
+
+* I would like to give a special thank you to a fellow student, 'Shane Muirhead' from SLACK, who helped me massively
+with ensuring that my project was connected to MongoDB properly, and explaining the use of environment variables
+in a way that I understood. 
 
 
